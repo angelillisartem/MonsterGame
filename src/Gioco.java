@@ -15,7 +15,7 @@ public class Gioco {
 
         vampiro.azzanna();
         licantropo.azzanna();
-        licantropo.azzanna();
+        eroe.combatti();
 
         System.out.print(vampiro.getForza());
         System.out.print(licantropo.getForza());
