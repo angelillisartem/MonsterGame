@@ -1,2 +1,5 @@
-public interface Umano {
+public interface Umano extends Personaggio{
+    default void combatti() {
+
+    }
 }
