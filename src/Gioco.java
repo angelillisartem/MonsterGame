@@ -4,7 +4,8 @@ public class Gioco {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("Umano: ");
-        boolean scelta = in.hasNext();
+        boolean scelta = in.nextBoolean();
+
         Eroe eroe = new Eroe();
         Licantropo licantropo = new Licantropo(scelta);
         Vampiro vampiro = new Vampiro();
