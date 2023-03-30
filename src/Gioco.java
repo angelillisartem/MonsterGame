@@ -1,24 +1,40 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Gioco {
+    public static Scanner in;
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        System.out.print("Umano: ");
-        boolean scelta = in.nextBoolean();
+        in = new Scanner(System.in);
+        int scelta = 0;
 
-        Eroe eroe = new Eroe();
-        Licantropo licantropo = new Licantropo(scelta);
-        Vampiro vampiro = new Vampiro();
+        do {
+            System.out.print("\n1) Gioca!");
+            System.out.print("\n2) Esci!");
+            scelta = in.nextInt();
 
-        for (int i = 0; i < 3; i++)
-            eroe.combatti();
+            switch (scelta) {
+                case 1:
+                    int forzaGiocatore1 = 20;
+                    System.out.print("\nGiocatore 1");
+                    System.out.print("\nLa tua forza iniziale e: " + forzaGiocatore1);
+                    System.out.print("\nLa tua carta e: " + Carte.randomCarte());
 
-        vampiro.azzanna();
-        licantropo.azzanna();
-        eroe.combatti();
+                    int forzaGiocatore2 = 30;
+                    System.out.print("\nGiocatore 2");
+                    System.out.print("\nLa tua forza iniziale e: " + forzaGiocatore2);
+                    System.out.print("\nLa tua carta e: " + Carte.randomCarte());
 
-        System.out.print(vampiro.getForza());
-        System.out.print(licantropo.getForza());
-        System.out.print(eroe.getForza());
+
+            }
+
+        } while (scelta < 2);
+    }
+    public enum Carte {
+        EROE, VAMPIRO, LICANTROPO;
+        private static final Random PRNG = new Random();
+        public static Carte randomCarte()  {
+            Carte[] carta = values();
+            return carta[PRNG.nextInt(carta.length)];
+        }
     }
 }

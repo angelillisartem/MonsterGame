@@ -16,7 +16,7 @@ public class Licantropo extends Eroe implements Mostro{
     }
 
     public void azzanna() {
-        if (!uomo) forzaMostro=forzaMostro - 2;
+        if (!uomo) forzaMostro = forzaMostro - 2;
     }
 
     public void combatti () {
